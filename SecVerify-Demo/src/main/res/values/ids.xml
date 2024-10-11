@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="flyverify_uisetting" type="id"/>
+    <item name="flyverify_adapter" type="id" />
+    <item name="flyverify_callback1" type="id" />
+    <item name="flyverify_callback2" type="id" />
+    <item name="flyverify_callback3" type="id" />
+    <item name="flyverify_event_test" type="id" />
+</resources>

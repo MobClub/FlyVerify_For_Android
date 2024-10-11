@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fly_verify_demo_common_bg"
+    android:fitsSystemWindows="true"
+    tools:context=".DemoLoginActivity">
+
+    <TextView
+        android:id="@+id/fly_verify_demo_title_bar_left"
+        android:layout_width="@dimen/fly_verify_demo_common_100"
+        android:layout_height="@dimen/fly_verify_demo_common_50"
+        android:layout_marginLeft="@dimen/fly_verify_demo_common_10"
+        android:layout_toRightOf="@+id/fly_verify_demo_title_bar_left_iv"
+        android:drawableLeft="@drawable/fly_verify_demo_back"
+        android:gravity="center_vertical"
+        android:text="@string/fly_verify_demo_back"
+        android:textColor="@color/fly_verify_demo_text_color_common_black"
+        android:textSize="@dimen/fly_verify_demo_text_size_s" />
+
+    <LinearLayout
+        android:id="@+id/fly_verify_demo_login_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fly_verify_demo_title_bar_left"
+        android:layout_marginTop="@dimen/fly_verify_demo_common_50"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fly_verify_demo_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fly_verify_demo_common_20"
+            android:text="@string/app_name"
+            android:textColor="@color/fly_verify_demo_text_color_common_black"
+            android:textSize="@dimen/fly_verify_demo_text_size_xl"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/fly_verify_demo_login_show_flyond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fly_verify_demo_login_show"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/fly_verify_demo_common_20"
+        android:text="@string/fly_verify_demo_no_more_wating"
+        android:textColor="@color/fly_verify_demo_text_color_common_black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/fly_verify_demo_login_usename"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fly_verify_demo_common_50"
+        android:layout_below="@+id/fly_verify_demo_login_show_flyond"
+        android:layout_marginLeft="@dimen/fly_verify_demo_common_50"
+        android:layout_marginTop="@dimen/fly_verify_demo_common_30"
+        android:layout_marginRight="@dimen/fly_verify_demo_common_50"
+        android:background="@drawable/fly_verify_demo_shape_rectangle_gray"
+        android:drawableLeft="@drawable/fly_verify_demo_usename"
+        android:drawablePadding="@dimen/fly_verify_demo_common_20"
+        android:paddingLeft="@dimen/fly_verify_demo_common_10"
+        android:text="admin" />
+
+    <EditText
+        android:id="@+id/fly_verify_demo_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fly_verify_demo_common_50"
+        android:layout_below="@+id/fly_verify_demo_login_usename"
+        android:layout_marginLeft="@dimen/fly_verify_demo_common_50"
+        android:layout_marginTop="@dimen/fly_verify_demo_common_30"
+        android:layout_marginRight="@dimen/fly_verify_demo_common_50"
+        android:background="@drawable/fly_verify_demo_shape_rectangle_gray"
+        android:drawableLeft="@drawable/fly_verify_demo_password"
+        android:drawablePadding="@dimen/fly_verify_demo_common_20"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/fly_verify_demo_common_10"
+        android:text="12345678" />
+
+    <Button
+        android:id="@+id/fly_verify_demo_login_do_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fly_verify_demo_common_50"
+        android:layout_below="@+id/fly_verify_demo_login_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/fly_verify_demo_common_50"
+        android:layout_marginTop="@dimen/fly_verify_demo_common_30"
+        android:layout_marginRight="@dimen/fly_verify_demo_common_50"
+        android:background="@drawable/fly_verify_demo_shape_rectangle"
+        android:text="@string/fly_verify_demo_login"
+        android:textColor="@color/fly_verify_demo_common_bg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fly_verify_demo_login_wechat"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/fly_verify_demo_common_20"
+        android:text="@string/fly_verify_demo_other_login" />
+
+    <ImageView
+        android:id="@+id/fly_verify_demo_login_wechat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/fly_verify_demo_common_30"
+        android:src="@drawable/fly_verify_demo_wechat" />
+</RelativeLayout>

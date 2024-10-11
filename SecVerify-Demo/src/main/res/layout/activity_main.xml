@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fly_verify_demo_main_background"
+    android:gravity="center_horizontal">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/fly_verify_demo_main_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fly_verify_demo_bottom_container"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="@dimen/fly_verify_demo_common_20"
+        android:layout_marginTop="20dp"
+        android:scaleType="center" />
+
+    <TextView
+        android:id="@+id/fly_verify_demo_main_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/fly_verify_demo_common_50"
+        android:drawableLeft="@drawable/fly_verify_demo_logo_white"
+        android:drawablePadding="@dimen/fly_verify_demo_common_20"
+        android:text="@string/app_name"
+        android:textColor="@color/fly_verify_common_bg"
+        android:textSize="@dimen/fly_verify_demo_text_size_xl"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fly_verify_demo_show_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fly_verify_demo_main_app_name"
+        android:layout_marginTop="@dimen/fly_verify_demo_common_10"
+        android:gravity="center_horizontal"
+        android:text="让用户不再等待"
+        android:textColor="@color/fly_verify_common_bg"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/fly_verify_demo_bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/fly_verify_demo_shape_rectangle_corner"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/fly_verify_demo_main_preverify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fly_verify_demo_common_50"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="@dimen/fly_verify_demo_common_75"
+            android:layout_marginRight="@dimen/fly_verify_demo_common_75"
+            android:background="@drawable/button_bg"
+            android:text="预取号"
+            android:textColor="@color/fly_verify_common_bg" />
+        <Button
+            android:id="@+id/fly_verify_demo_main_verify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fly_verify_demo_common_50"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="@dimen/fly_verify_demo_common_75"
+            android:layout_marginRight="@dimen/fly_verify_demo_common_75"
+            android:background="@drawable/button_bg"
+            android:text="一键登录 （全屏）"
+            android:textColor="@color/fly_verify_common_bg" />
+        <Button
+            android:id="@+id/fly_verify_demo_main_verify2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fly_verify_demo_common_50"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="@dimen/fly_verify_demo_common_75"
+            android:layout_marginRight="@dimen/fly_verify_demo_common_75"
+            android:background="@drawable/button_bg"
+            android:text="一键登录 （验证取消授权）"
+            android:textColor="@color/fly_verify_common_bg" />
+        <Button
+            android:id="@+id/fly_verify_demo_main_verify_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fly_verify_demo_common_50"
+            android:layout_marginLeft="@dimen/fly_verify_demo_common_75"
+            android:layout_marginTop="@dimen/fly_verify_demo_common_30"
+            android:layout_marginRight="@dimen/fly_verify_demo_common_75"
+            android:background="@drawable/button_bg"
+            android:text="一键登录 （弹窗）"
+            android:textColor="@color/fly_verify_common_bg" />
+        <Button
+            android:id="@+id/btnOther"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fly_verify_demo_common_50"
+            android:text="扩展业务功能设置"
+            android:visibility="gone"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/fly_verify_common_bg"
+            android:layout_marginLeft="@dimen/fly_verify_demo_common_75"
+            android:layout_marginTop="@dimen/fly_verify_demo_common_30"
+            android:layout_marginRight="@dimen/fly_verify_demo_common_75"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fly_verify_demo_common_50"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:id="@+id/layoutTest">
+
+            <CheckBox
+                android:id="@+id/cbAutoFinish"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="自动关闭授权页"
+                android:textColor="@android:color/black"
+                android:checked="true"/>
+
+            <CheckBox
+                android:id="@+id/cbOtherAutoFinish"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="其他方式自动关闭授权页"
+                android:textColor="@android:color/black"
+                android:checked="true"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/tvResult"
+            android:hint="结果"/>
+        <TextView
+            android:id="@+id/fly_verify_demo_main_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginTop="@dimen/fly_verify_demo_common_30"
+            android:layout_marginBottom="@dimen/fly_verify_demo_common_20"
+            android:textColor="@color/fly_verify_demo_text_color_common_gray"
+            android:textSize="@dimen/fly_verify_demo_text_size_s"
+            tools:text="版本号" />
+    </LinearLayout>
+
+</RelativeLayout>
