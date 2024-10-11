@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import cn.fly.verify.datatype.VerifyResult;
+import cn.fly.verify.demo.Const;
 import cn.fly.verify.demo.ResultListener;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -49,8 +50,8 @@ public class LoginTask {
 			values.put("operator", verifyResult.getOperator());
 			values.put("phoneOperator", verifyResult.getOperator());
 			values.put("token", verifyResult.getToken());
-			values.put("md5", "879f9a7a14a16a41b26ec3c755e4958e");
-			values.put("appkey", "3a2c2a977d3d2");
+			values.put("md5", "应用md5");
+			values.put("appkey", Const.APP_KEY);
 		}
 		OkHttpClient client = new OkHttpClient().newBuilder()
 				.connectTimeout(8, TimeUnit.SECONDS)

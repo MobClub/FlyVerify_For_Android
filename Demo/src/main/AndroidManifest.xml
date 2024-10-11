@@ -28,25 +28,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".OtherActivity"/>
-        <activity android:name=".InterfaceTestActivity"
-            android:launchMode="singleTop"/>
         <activity android:name=".ResultActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
-        <activity android:name=".DemoLoginActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            >
-        </activity>
+
         <meta-data android:name="custom-AppKey" android:value="3a2c2a977d3d2"/>
         <meta-data android:name="custom-AppSecret" android:value="b89d2427a3bc7ad1aea1e1e8c1d36bf3"/>
-<!--        <meta-data-->
-<!--            android:name="ISP-Config"-->
-<!--            android:value="jtGOmQOvOlHCNqSGnIR2Mp3HdDDEGKS1U//NFcvplgNv+MHObafGL2W3xAuVH6PzIJFSngYC7EERlbFV46Jn3615FlpBYHetLCW6aTudqn/w5ReVVh5ze32hdSh9TajOVjhR7MfiJivtFWHURBxeccJPShVU71QTXEsuVhBv9IGrbDOLD8s7VkNjikNjiIyqP+M9kilcKZzv7HGscuO27v6f2OCldWexYBKVoQVrO4fn3Zjv7Ozec/nT3OIKAqiGPofYuZ3nIjYpanw4nFo+dtOQ4Ng/3wrQrSNHp+4GlR+a5jT9NPAWVlwOIeL5Y+8fUFC9/3a91tWbfTMeyxId7+SleQPalU5AB4mB8oLN4I2NITD+RR+DdsdIemU9SOug9w5fm46nlq5EcBT73UR7C4iDpcdMidsIBY5MmH5ZqvybQdtxa7DBacn0GYRzwSGtu/VP12dkBUzofUnFeMQ6ykwS3u90DyRIACsOMt589Oe+0Y747MYE29t54w0KHVXr7WGWZ3zNGx/dHrU1B4rpunFw/SRs5kE/KN6omPPelnY"-->
-<!--        />-->
+
     </application>
 
 </manifest>

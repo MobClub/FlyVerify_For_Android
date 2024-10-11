@@ -1,17 +1,14 @@
 package cn.fly.verify.demo;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Color;
-import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
@@ -29,10 +26,8 @@ import cn.fly.verify.CustomUIRegister;
 import cn.fly.verify.CustomViewClickListener;
 import cn.fly.verify.GetTokenCallback;
 import cn.fly.verify.OAuthPageEventCallback;
-import cn.fly.verify.OperationCallback;
 import cn.fly.verify.PageCallback;
 import cn.fly.verify.PreVerifyCallback;
-import cn.fly.verify.ResultCallback;
 import cn.fly.verify.FlyVerify;
 import cn.fly.verify.UiLocationHelper;
 import cn.fly.verify.VerifyCallback;
@@ -41,11 +36,9 @@ import cn.fly.verify.datatype.UiSettings;
 import cn.fly.verify.datatype.VerifyResult;
 import cn.fly.verify.demo.login.LoginTask;
 
-import com.squareup.haha.perflib.Main;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.crashreport.CrashReport;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -84,7 +77,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		LeakCanary.install(getApplication());
 		//#endif
 		CrashReport.initCrashReport(getApplicationContext(), "28fe0803ee", false);
-//		MobSDK.init(this, cn.fly.verify.demo.Const.APP_KEY, cn.fly.verify.demo.Const.APP_SECRET);
 		setContentView(R.layout.activity_main);
 		if (Build.VERSION.SDK_INT >= 21){
 			// 设置沉浸式状态栏
@@ -103,20 +95,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		}
 
 		initView();
-//		MobSDK.init(getApplicationContext(), cn.fly.verify.demo.Const.APP_KEY, cn.fly.verify.demo.Const.APP_SECRET);
 		PrivacyDialogUtils privacyDialogUtils = new PrivacyDialogUtils();
 		privacyDialogUtils.setDismissListener(new DialogInterface.OnDismissListener() {
 			@Override
 			public void onDismiss(DialogInterface dialog) {
-				initMob();
+				init();
 			}
 		});
 		if(!privacyDialogUtils.showPrivacyDialogIfNeed(this, "秒验")) {
-			initMob();
+			init();
 		}
 	}
 
-	private void initMob(){
+	private void init(){
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 				if(checkSelfPermission("android.permission.READ_PHONE_STATE") != PackageManager.PERMISSION_GRANTED){
 					requestPermissions(new String[]{"android.permission.READ_PHONE_STATE"},0);
@@ -136,20 +127,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			case R.id.fly_verify_demo_main_verify: {
 				// 添加自定义控件
 				// 自定义UI
-//				if (!isPreVerifyDone) {
-//					Toast.makeText(MainActivity.this, "请等待预登录完成" , Toast.LENGTH_SHORT).show();
-//					return;
-//				}
 				addCustomView();
-//				customizeUi();
-//				FlyVerify.setAdapterFullName("cn.fly.verify.demo.ui.component.MyAdapter");
-//				FlyVerify.autoFinishOAuthPage(false);
 				verify();
 				break;
 			}
 			case R.id.fly_verify_demo_main_verify2: {
 				addCustomView();
-//				FlyVerify.autoFinishOAuthPage(false);
 				verify2();
 				break;
 			}
@@ -243,11 +226,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				}
 				tvResult.setText("预取号成功");
 				isPreVerifyDone = true;
-				try {
-					Class.forName("dalvik.system.CloseGuard").getMethod("setEnabled",boolean.class).invoke(null,true);
-				}catch (Throwable t){
-					throw new RuntimeException(t);
-				}
 			}
 
 			@Override
@@ -423,7 +401,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				public void onComplete(String data) {
 					CommonProgressDialog.dismissProgressDialog();
 					Log.d(TAG, "Login success. data: " + data);
-					vibrate();
 					// 服务端登录成功，跳转成功页
 					goResultActivity(data);
 				}
@@ -627,18 +604,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //			FlyVerify.finishOAuthPage();
 		}
 		cn.fly.verify.ui.component.CommonProgressDialog.dismissProgressDialog();
-	}
-
-	private void vibrate() {
-//		Vibrator vibrator = (Vibrator) DH.SyncMtd.getSystemServiceSafe(Context.VIBRATOR_SERVICE);
-//		if (vibrator != null) {
-//			if (Build.VERSION.SDK_INT >= 26) {
-//				VibrationEffect vibrationEffect = VibrationEffect.createOneShot(500, 20);
-//				vibrator.vibrate(vibrationEffect);
-//			} else {
-//				vibrator.vibrate(500);
-//			}
-//		}
 	}
 
 	@Override

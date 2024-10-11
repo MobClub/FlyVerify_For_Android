@@ -1,16 +1,8 @@
 package cn.fly.verify.demo.util;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.text.style.ClickableSpan;
-import android.text.style.ForegroundColorSpan;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -118,9 +110,9 @@ public class CustomizeUtils {
 //				.setAgreementColorId(R.color.fly_verify_demo_main_color)
 				// 自定义隐私协议一文字资源ID
 				.setAgreementHidden(false)
-				.setCusAgreementNameId1(R.string.fly_verify_demo_mob_service)
+				.setCusAgreementNameId1(R.string.fly_verify_demo_service)
 //				// 自定义隐私协议一URL
-				.setCusAgreementUrl1("http://www.mob.com/policy/zh")
+				.setCusAgreementUrl1("http://www.xxx.com/policy/zh")
 ////				自定义隐私协议一颜色
 //				.setCusAgreementColor1(R.color.fly_verify_demo_main_color)
 //				// 自定义隐私协议二文字资源ID
@@ -215,8 +207,8 @@ public class CustomizeUtils {
 				.setCheckboxDefaultState(true)
 				.setCheckboxImgId(R.drawable.fly_verify_demo_customized_checkbox_selector)
 				.setAgreementColorId(R.color.fly_verify_demo_main_color)
-				.setCusAgreementNameId1(R.string.fly_verify_demo_mob_service)
-				.setCusAgreementUrl1("http://www.mob.com/policy/zh")
+				.setCusAgreementNameId1(R.string.fly_verify_demo_service)
+				.setCusAgreementUrl1("http://www.xxx.com/policy/zh")
 				.setAgreementTextStart("同意")
 				.setAgreementTextEnd("并授权秒验Demo获取本机号码")
 				.setAgreementCmccText("《移动统一认证服务条款》")
@@ -680,8 +672,8 @@ public class CustomizeUtils {
 				.setAgreementCtccText("《电信统一认证服务条款》")
 //				.setStartActivityTransitionAnim(R.anim.fade_in,R.anim.fade_out)
 //				.setFinishActivityTransitionAnim(R.anim.fade_in,R.anim.fade_out)
-				.setCusAgreementNameId1(R.string.fly_verify_demo_mob_service)
-				.setCusAgreementUrl1("http://www.mob.com/policy/zh")
+				.setCusAgreementNameId1(R.string.fly_verify_demo_service)
+				.setCusAgreementUrl1("http://www.xxx.com/policy/zh")
 				.setBottomTranslateAnim(true)
 				.setBackgroundImgId(R.drawable.fly_verify_background_demo_dialog)
 				.setDialogTheme(true)
@@ -727,8 +719,8 @@ public class CustomizeUtils {
 				.setAgreementOffsetX(60)
 				.setAgreementOffsetRightX(60)
 				.setAgreementColorId(R.color.fly_verify_demo_main_color)
-				.setCusAgreementNameId1(R.string.fly_verify_demo_mob_service)
-				.setCusAgreementUrl1("http://www.mob.com/policy/zh")
+				.setCusAgreementNameId1(R.string.fly_verify_demo_service)
+				.setCusAgreementUrl1("http://www.xxx.com/policy/zh")
 				.setAgreementTextStart("同意")
 				.setAgreementTextEnd("并授权秒验Demo获取本机号码")
 				.setAgreementCmccText("《移动统一认证服务条款》")

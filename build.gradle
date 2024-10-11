@@ -9,8 +9,7 @@ buildscript {
         }
         maven {
             allowInsecureProtocol = true
-            //            url "https://mvn.zztfly.com/android"
-            url 'http://10.89.104.129:8080/job/iMaven/ws/android/'
+            url "https://mvn.zztfly.com/android"
         }
     }
 
@@ -27,8 +26,7 @@ allprojects {
         google()
         maven {
             allowInsecureProtocol = true
-//            url "https://mvn.zztfly.com/android"
-            url 'http://10.89.104.129:8080/job/iMaven/ws/android/'
+            url "https://mvn.zztfly.com/android"
         }
     }
 }
