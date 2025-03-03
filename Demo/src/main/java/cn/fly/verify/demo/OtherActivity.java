@@ -23,7 +23,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +35,7 @@ public class OtherActivity extends Activity {
     private CheckBox cbGetLocation, cbGetAndroidId, cbGetOaid, cbGetAdvertisingId, cbGetConnectionInfo, cbGetWifiScanResults, cbGetCellLocation, cbGetNeighboringCellInfo;
     private CheckBox cbGetPackageInfos, cbGetIpAddress, cbGetCellIpv4, cbGetCellIpv6, cbGetActiveSubscriptionInfoCount, cbGetActiveSubscriptionInfoList, cbGetSimOperatorName, cbGetSimOperator, cbGetNetworkType, cbGetServiceState;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if(checkSelfPermission("android.permission.ACCESS_FINE_LOCATION") != PackageManager.PERMISSION_GRANTED){

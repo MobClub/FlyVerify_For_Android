@@ -36,8 +36,6 @@ import cn.fly.verify.datatype.UiSettings;
 import cn.fly.verify.datatype.VerifyResult;
 import cn.fly.verify.demo.login.LoginTask;
 
-import com.squareup.leakcanary.LeakCanary;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,14 +44,12 @@ import java.util.List;
 import cn.fly.verify.demo.util.CustomizeUtils;
 import cn.fly.verify.demo.util.PrivacyDialogUtils;
 import cn.fly.verify.ui.component.CommonProgressDialog;
-import pl.droidsonroids.gif.GifImageView;
 
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
 	private static final String TAG = "MainActivity-Demo";
 	private static final int REQUEST_CODE = 1001;
-	private GifImageView logoIv;
 	private Button verifyBtn;
 	private Button verifyDialogBtn;
 	private TextView versionTv;
@@ -68,15 +64,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//#if def{sdk.debugable}
-		if (LeakCanary.isInAnalyzerProcess(this)) {
-			// This process is dedicated to LeakCanary for heap analysis.
-			// You should not init your app in this process.
-			return;
-		}
-		LeakCanary.install(getApplication());
-		//#endif
-		CrashReport.initCrashReport(getApplicationContext(), "28fe0803ee", false);
 		setContentView(R.layout.activity_main);
 		if (Build.VERSION.SDK_INT >= 21){
 			// 设置沉浸式状态栏
@@ -146,15 +133,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				verify();
 				break;
 			}
-			case R.id.fly_verify_demo_main_app_name: {
-				switchDevMode();
-
-				break;
-			}
-			case R.id.fly_verify_demo_main_version: {
-				switchDevMode();
-				break;
-			}
 			case R.id.btnOther:
 				startActivity(new Intent(MainActivity.this, OtherActivity.class));
 				break;
@@ -180,7 +158,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		findViewById(R.id.fly_verify_demo_main_verify2).setOnClickListener(this);
 		findViewById(R.id.fly_verify_demo_main_preverify).setOnClickListener(this);
 		layoutTest = findViewById(R.id.layoutTest);
-		logoIv = findViewById(R.id.fly_verify_demo_main_logo);
 		verifyBtn = findViewById(R.id.fly_verify_demo_main_verify_dialog);
 		verifyDialogBtn = findViewById(R.id.fly_verify_demo_main_verify);
 		tvResult = findViewById(R.id.tvResult);
@@ -194,10 +171,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		});
 		versionTv = findViewById(R.id.fly_verify_demo_main_version);
 		versionTv.setText(FlyVerify.getVersion());
-		logoIv.setImageResource(R.drawable.fly_verify_demo_tradition);
 		verifyBtn.setOnClickListener(this);
 		verifyDialogBtn.setOnClickListener(this);
-		logoIv.setOnClickListener(this);
 		appNameTv.setOnClickListener(this);
 		versionTv.setOnClickListener(this);
 

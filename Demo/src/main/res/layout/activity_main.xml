@@ -6,15 +6,6 @@
     android:background="@drawable/fly_verify_demo_main_background"
     android:gravity="center_horizontal">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/fly_verify_demo_main_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/fly_verify_demo_bottom_container"
-        android:layout_centerHorizontal="true"
-        android:paddingLeft="@dimen/fly_verify_demo_common_20"
-        android:layout_marginTop="20dp"
-        android:scaleType="center" />
 
     <TextView
         android:id="@+id/fly_verify_demo_main_app_name"
